@@ -169,8 +169,8 @@ class BromaCodegen:
             f.write("\n")
         
         if self._target_platform != "win" and not self._use_custom_gnustl:
-            import android_patcher
-            android_patcher.main(f"{self._target_platform}.hpp")
+            from .android_patcher import main
+            main(f"{self._target_platform}.hpp")
 
     def _get_bromaida_platform_macro(self) -> str:
         """Gets the BromaIDA platform macro name (shocker)"""
