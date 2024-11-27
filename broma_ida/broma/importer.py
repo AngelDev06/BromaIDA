@@ -123,7 +123,7 @@ class BIUtils:
     @staticmethod
     def verify_type(t: Optional[ida_tinfo_t]) -> bool:
         if t is None:
-            return False
+            return True
 
         if t.get_size() == 0xFFFFFFFFFFFFFFFF or t.is_forward_decl():
             return True
