@@ -152,7 +152,7 @@ class BIUtils:
                 )
                 return False
 
-        if any([
+        if not all([
             BIUtils.verify_type(BIUtils.get_type_info(t))
             for t in (
                 "cocos2d::CCObject", "cocos2d::CCNode", "cocos2d::CCImage",

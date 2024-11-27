@@ -7,6 +7,7 @@ namespace cocos2d
 	class CCArray;
 }
 
+class SongTriggerGameObject;
 class EnterEffectInstance;
 class EffectGameObject;
 class SFXTriggerState;
@@ -28,6 +29,11 @@ struct GJValueTween;
 struct SongChannelState;
 struct GJPointDouble;
 struct GameObjectPhysics;
+
+struct GameObjectVector
+{
+	std::vector<GameObject*> vector;
+};
 
 // exists because IDA cant dynamically make STL types
 class holy_shit

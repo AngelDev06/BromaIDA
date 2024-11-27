@@ -5723,6 +5723,8 @@ namespace cocos2d
 		class CCHttpResponse;
 		typedef void (CCObject::*SEL_HttpResponse)(CCHttpClient* client, CCHttpResponse* response);
 
+		class CCControlColourPicker;
+
 		class CCHttpRequest : public CCObject
 		{
 		public:

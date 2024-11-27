@@ -1,6 +1,8 @@
 import re
+from pathlib import Path
+from typing import Union
 
-def main(target_name: str):
+def main(target_name: Union[str, Path]):
     patch_classes = (
         "GameObjectEditorState",
         "GJValueTween",
@@ -37,7 +39,12 @@ def main(target_name: str):
         declaration = matched.group("declaration")
         definition = matched.group("definition")
         content = class_def_pattern.sub("", content, 1)
-        content = class_decl_pattern.sub(f"{declaration}\n{definition}", content)
+        content = class_decl_pattern.sub(f"{declaration}\n{definition}", content, 1)
+    
+    content = content.replace(
+        "std::vector<std::vector<GameObject*>*>",
+        "std::vector<GameObjectVector*>"
+    )
     
     with open(target_name, "w") as file:
         file.write(content)
